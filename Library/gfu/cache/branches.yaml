@@ -13,23 +13,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-06-19T17:04:35.282+02:00
+  lastUpdatedAtString: 2020-06-19T17:06:39.949+02:00
   initializedAtString: 2020-06-19T17:02:52.350+02:00
-  localBranches: []
+  localBranches:
+  - name: master
+    tracking: 
   remoteBranches:
   - name: origin/master
     tracking: '[None]'
   remotes:
   - name: origin
-    url: https://github.com/Rob11001/N-Queens_Problem-Unity.git
+    url: /Rob11001/N-Queens_Problem-Unity.git
     login: 
     user: 
     host: 
     function: 0
     token: 
   localConfigBranches:
-    keys: []
-    values: []
+    keys:
+    - master
+    values:
+    - name: master
+      remote:
+        name: 
+        url: 
+      trackingBranch: 
   remoteConfigBranches:
     keys:
     - origin
@@ -41,11 +49,11 @@ MonoBehaviour:
       - name: master
         remote:
           name: origin
-          url: https://github.com/Rob11001/N-Queens_Problem-Unity.git
+          url: /Rob11001/N-Queens_Problem-Unity.git
         trackingBranch: 
   configRemotes:
     keys:
     - origin
     values:
     - name: origin
-      url: https://github.com/Rob11001/N-Queens_Problem-Unity.git
+      url: /Rob11001/N-Queens_Problem-Unity.git

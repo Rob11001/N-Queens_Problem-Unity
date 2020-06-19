@@ -13,6 +13,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 3
-  lastUpdatedAtString: 2020-06-19T17:04:14.391+02:00
-  initializedAtString: 2020-06-19T17:02:48.805+02:00
-  log: []
+  lastUpdatedAtString: 2020-06-19T17:10:26.891+02:00
+  initializedAtString: 2020-06-19T17:09:01.845+02:00
+  log:
+  - commitID: a4b716759ddda1688290169866d0278c6b8eddb8
+    mergeA: 
+    mergeB: 
+    authorName: Rob11001
+    authorEmail: r.bruno49@studenti.unisa.it
+    commitEmail: r.bruno49@studenti.unisa.it
+    commitName: Rob11001
+    summary: First Commit
+    description: First Commit
+    timeString: 2020-06-19T17:05:04.000+02:00
+    commitTimeString: 2020-06-19T17:05:04.000+02:00
+    changes:
+    - path: Library\gfu\cache\branches.yaml
+      fullPath: C:\Users\Roberto\Progetti\N-QueensProblem\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gitlog.yaml
+      fullPath: C:\Users\Roberto\Progetti\N-QueensProblem\Library\gfu\cache\gitlog.yaml
+      projectPath: Library\gfu\cache\gitlog.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: C:\Users\Roberto\Progetti\N-QueensProblem\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gituser.yaml
+      fullPath: C:\Users\Roberto\Progetti\N-QueensProblem\Library\gfu\cache\gituser.yaml
+      projectPath: Library\gfu\cache\gituser.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
