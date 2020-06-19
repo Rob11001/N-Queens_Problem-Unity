@@ -59,9 +59,8 @@ public class GameController : MonoBehaviour
     private IEnumerator PlaceQueens(int n) {
         if(n == N) {
             // Algoritmo finito
-            //Destroy(queensPos[n-1].gameObject);
             printChess();
-            yield return new WaitForSeconds(2);
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         } else {
             for(int j = 0; j < N; j++) {
                 if(queensPos[n].gameObject != null)
