@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     
     [SerializeField]
     private Vector3 startPosition;
+    [SerializeField]
+    private Text backtracks;
     private int N = 8;
     private Vector3[,] chessBoardPositions;
     private Queen[] queensPos;
@@ -67,7 +70,9 @@ public class GameController : MonoBehaviour
                     Destroy(queensPos[n].gameObject);
                 
                 bool legal = true;
-                
+
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.A));
+
                 for(int i = 0; i < n; i++) {
                     if((queensPos[i].Pos == j) || (queensPos[i].Pos == j + n - i) || (queensPos[i].Pos == j - n + i)) 
                         legal = false;
@@ -78,11 +83,15 @@ public class GameController : MonoBehaviour
                     queensPos[n].gameObject = Instantiate(queen, chessBoardPositions[n,j], Quaternion.identity);
                     Coroutine coroutine = StartCoroutine("PlaceQueens", n+1);
                     yield return coroutine;
+                    backtracks.gameObject.SetActive(true);
+                    StartCoroutine("disableMessage");
+
                 } else {
                     if(queensPos[n].gameObject != null)
-                        Destroy(queensPos[n].gameObject); 
+                        Destroy(queensPos[n].gameObject);
                 }
             }
+            Destroy(queensPos[n-1].gameObject);
         }
     }
 
@@ -98,5 +107,10 @@ public class GameController : MonoBehaviour
             str += '\n';
         }
         Debug.Log(str);
+    }
+
+    private IEnumerator disableMessage() {
+        yield return new WaitForSeconds(1f);
+        backtracks.gameObject.SetActive(false);
     }
 }
