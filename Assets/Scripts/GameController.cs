@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     private Vector3 startPosition;
     [SerializeField]
     private Text backtracks;
+    [SerializeField]
+    private Button forwardButton;
     private int N = 8;
     private Vector3[,] chessBoardPositions;
     private Queen[] queensPos;
@@ -17,9 +19,9 @@ public class GameController : MonoBehaviour
     private float Xoffset, Zoffset;
     private GameObject queen;
     private bool flag = false;
+    private bool automatic = false;
+    private Color defaultColor;
 
-    
-    // Start is called before the first frame update
     void Start()
     {
         chessBoardPositions = new Vector3 [N,N];
@@ -31,10 +33,7 @@ public class GameController : MonoBehaviour
         }
         
         queen = Resources.Load<GameObject>("queen");
-
-        /* for(int i = 0; i < N; i++)
-            for(int j = 0; j < N; j++) 
-                Instantiate(queen,chessBoardPositions[i,j], Quaternion.identity); */
+        defaultColor = forwardButton.image.color;
         
     }
 
@@ -70,8 +69,9 @@ public class GameController : MonoBehaviour
                     Destroy(queensPos[n].gameObject);
                 
                 bool legal = true;
-
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.A));
+                
+                if(!automatic)
+                    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.A));
 
                 for(int i = 0; i < n; i++) {
                     if((queensPos[i].Pos == j) || (queensPos[i].Pos == j + n - i) || (queensPos[i].Pos == j - n + i)) 
@@ -85,6 +85,7 @@ public class GameController : MonoBehaviour
                     yield return coroutine;
                     backtracks.gameObject.SetActive(true);
                     StartCoroutine("disableMessage");
+                    yield return new WaitForSeconds(1f);
 
                 } else {
                     if(queensPos[n].gameObject != null)
@@ -110,7 +111,18 @@ public class GameController : MonoBehaviour
     }
 
     private IEnumerator disableMessage() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         backtracks.gameObject.SetActive(false);
+    }
+
+    public void toogleAuto() {
+        automatic = automatic == false;
+        if(!automatic) {
+            Color color = forwardButton.image.color;
+            color.a = 255;
+            forwardButton.image.color = color;
+        } else {
+            forwardButton.image.color = defaultColor;
+        }
     }
 }
