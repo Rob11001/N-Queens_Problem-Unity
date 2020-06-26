@@ -1,5 +1,5 @@
 # N-Queens_Problem-Unity
-It's a very simple application made in **Unity**. I made it because I was studying Unity 3D for an exam and in the same time I was studying the **Backtracking** technique for the exact esponential algoritms.
+It's a very simple application made in **Unity**. I made it because I was studying Unity 3D for an exam and in the same time I was studying the **Backtracking** technique for exact esponential algoritms.
 
 # Installation
 Simply download the project and then open it in Unity. The version used is  2019.3.3f1.
